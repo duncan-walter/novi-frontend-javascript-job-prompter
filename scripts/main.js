@@ -21,9 +21,11 @@ switch (userDepartmentInput) {
     case "marketing":
     case "sales":
     case "customer-service":
+        document.getElementById('department-description').textContent = departments[userDepartmentInput].description;
         console.log(`${userDepartmentInput} is een leuke afdeling om te werken. Er werken op dit moment ${departments[userDepartmentInput].numberOfEmployees} medewerkers.`);
         break;
     default:
+        document.getElementById('error-message').textContent = "Ongeldige keuze. Probeer het opnieuw door de pagina te verversen.";
         console.error("Ongeldige keuze.");
         break;
 }
@@ -54,12 +56,17 @@ switch (userJobInput) {
     case "1":
     case "2":
     case "3":
+        document.getElementById('role-title').textContent = departments[userDepartmentInput].jobs[userJobInput].title;
+        document.getElementById('role-description').textContent = departments[userDepartmentInput].jobs[userJobInput].description;
         console.log(`Je koos ${departments[userDepartmentInput].jobs[userJobInput].title}.` +
             `Een uitdagende rol! ${departments[userDepartmentInput].jobs[userJobInput].description}.`);
         break;
     default:
+        document.getElementById('error-message').textContent = "Ongeldige keuze. Probeer het opnieuw door de pagina te verversen.";
         console.error("Ongeldige keuze.");
         break;
 }
 
 // De opdrachten die onder opdracht 4 vallen zijn hierboven verwerkt in opdracht 2 en 3.
+
+// De opdrachten die onder opdracht 5 vallen zijn hierboven verwerkt in opdracht 2 en 3.
